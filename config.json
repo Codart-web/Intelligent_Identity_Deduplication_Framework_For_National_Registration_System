@@ -1,0 +1,22 @@
+{
+  "thresholds": {
+    "clear_below": 0.55,
+    "block_above": 0.85
+  },
+  "fusion": {
+    "w_bio_min": 0.40,
+    "w_bio_max": 0.70,
+    "quality_scale": 0.30
+  },
+  "lsh": {
+    "num_perm": 128,
+    "threshold": 0.5
+  },
+  "faiss": {
+    "nprobe": 10,
+    "top_k": 5
+  },
+  "batch_scanner": {
+    "cosine_threshold": 0.55
+  }
+}
