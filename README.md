@@ -280,14 +280,20 @@ chmod +x start.sh
 
 ## Current Status
 
-| Phase | Status | Week |
-|-------|--------|------|
-| Inception | ✅ Complete | 1–2 |
-| Elaboration — PoCs | 🔄 In progress | 3 |
-| Elaboration — Dataset | ⏳ Pending | 4–5 |
-| Construction | ⏳ Pending | 8–13 |
-| Transition | ⏳ Pending | 14–16 |
 
+| Component | Status | Details |
+|---|---|---|
+| **Inception** | ✅ Complete | Proposal, use case model, architecture vision, risk register, supervisor sign-off |
+| **Elaboration — Documentation** | ✅ Complete | Database schema, Bantu rules, PoC results template, Elaboration Iteration Plan |
+| **Elaboration — Bantu Normaliser (D4)** | ✅ Complete | normaliser.py, rules.json, 30 unit tests passing, 50 held-out pairs ALL PASS |
+| **Elaboration — Dataset D5** | ✅ Complete | 990 records, 50 ground-truth pairs, all 5 duplicate types, seed=42 deterministic |
+| **Elaboration — Baselines** | ✅ Complete | Baseline A: F1=0.8889, Baseline B: F1=0.2524 — both verified |
+| **Elaboration — FAISS PoC** | 🔴 Kill risk — must run next | faiss_poc.ipynb — 20 face pairs through FaceNet, cosine similarity check |
+| **Elaboration — LSH PoC** | ⏳ Pending | lsh_poc.ipynb — 100-record index, recall >= 95% on Zambian variants |
+| **Elaboration — PostgreSQL** | ⏳ Pending | nrc_db setup, pgvector extension, schema initialisation |
+| **Elaboration — Terminals D1** | ⏳ Pending | Three Flask terminals, SQLite, slot-ID, sync worker |
+| **Construction** | ⏳ Pending — starts Week 8 | Requires all Elaboration gates cleared |
+| **Transition** | ⏳ Pending | Weeks 14–16 |
 ---
 
 ## References
