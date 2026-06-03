@@ -1,0 +1,51 @@
+record_id_a,record_id_b,duplicate_type,description,detection_channel
+REC00215,REC00951,Type1,Typographic name variant,Channel_A_LSH_Bantu
+REC00425,REC00952,Type1,Typographic name variant,Channel_A_LSH_Bantu
+REC00591,REC00953,Type1,Typographic name variant,Channel_A_LSH_Bantu
+REC00535,REC00954,Type1,Typographic name variant,Channel_A_LSH_Bantu
+REC00650,REC00955,Type1,Typographic name variant,Channel_A_LSH_Bantu
+REC00245,REC00956,Type1,Typographic name variant,Channel_A_LSH_Bantu
+REC00663,REC00957,Type1,Typographic name variant,Channel_A_LSH_Bantu
+REC00660,REC00958,Type1,Typographic name variant,Channel_A_LSH_Bantu
+REC00688,REC00959,Type1,Typographic name variant,Channel_A_LSH_Bantu
+REC00509,REC00960,Type1,Typographic name variant,Channel_A_LSH_Bantu
+REC00434,REC00961,Type2,Same face different identity (biometric fraud),Channel_B_FAISS_FaceNet
+REC00384,REC00962,Type2,Same face different identity (biometric fraud),Channel_B_FAISS_FaceNet
+REC00733,REC00963,Type2,Same face different identity (biometric fraud),Channel_B_FAISS_FaceNet
+REC00394,REC00964,Type2,Same face different identity (biometric fraud),Channel_B_FAISS_FaceNet
+REC00398,REC00965,Type2,Same face different identity (biometric fraud),Channel_B_FAISS_FaceNet
+REC00647,REC00966,Type2,Same face different identity (biometric fraud),Channel_B_FAISS_FaceNet
+REC00898,REC00967,Type2,Same face different identity (biometric fraud),Channel_B_FAISS_FaceNet
+REC00029,REC00968,Type2,Same face different identity (biometric fraud),Channel_B_FAISS_FaceNet
+REC00322,REC00969,Type2,Same face different identity (biometric fraud),Channel_B_FAISS_FaceNet
+REC00463,REC00970,Type2,Same face different identity (biometric fraud),Channel_B_FAISS_FaceNet
+REC00187,REC00971,Type3,DOB transposition error,Channel_A_JaroWinkler_DOB
+REC00235,REC00972,Type3,DOB transposition error,Channel_A_JaroWinkler_DOB
+REC00615,REC00973,Type3,DOB transposition error,Channel_A_JaroWinkler_DOB
+REC00446,REC00974,Type3,DOB transposition error,Channel_A_JaroWinkler_DOB
+REC00507,REC00975,Type3,DOB transposition error,Channel_A_JaroWinkler_DOB
+REC00429,REC00976,Type3,DOB transposition error,Channel_A_JaroWinkler_DOB
+REC00379,REC00977,Type3,DOB transposition error,Channel_A_JaroWinkler_DOB
+REC00393,REC00978,Type3,DOB transposition error,Channel_A_JaroWinkler_DOB
+REC00483,REC00979,Type3,DOB transposition error,Channel_A_JaroWinkler_DOB
+REC00391,REC00980,Type3,DOB transposition error,Channel_A_JaroWinkler_DOB
+REC00174,REC00517,Type4,"NRC number collision (different people, same NRC)",Batch_Audit_Scanner_SQL
+REC00506,REC00349,Type4,"NRC number collision (different people, same NRC)",Batch_Audit_Scanner_SQL
+REC00903,REC00482,Type4,"NRC number collision (different people, same NRC)",Batch_Audit_Scanner_SQL
+REC00136,REC00092,Type4,"NRC number collision (different people, same NRC)",Batch_Audit_Scanner_SQL
+REC00328,REC00736,Type4,"NRC number collision (different people, same NRC)",Batch_Audit_Scanner_SQL
+REC00552,REC00449,Type4,"NRC number collision (different people, same NRC)",Batch_Audit_Scanner_SQL
+REC00148,REC00271,Type4,"NRC number collision (different people, same NRC)",Batch_Audit_Scanner_SQL
+REC00121,REC00327,Type4,"NRC number collision (different people, same NRC)",Batch_Audit_Scanner_SQL
+REC00046,REC00134,Type4,"NRC number collision (different people, same NRC)",Batch_Audit_Scanner_SQL
+REC00527,REC00912,Type4,"NRC number collision (different people, same NRC)",Batch_Audit_Scanner_SQL
+REC00855,REC00981,Type5,Concurrent offline submission from two terminals,SlotID_Conflict_Handler
+REC00915,REC00982,Type5,Concurrent offline submission from two terminals,SlotID_Conflict_Handler
+REC00055,REC00983,Type5,Concurrent offline submission from two terminals,SlotID_Conflict_Handler
+REC00447,REC00984,Type5,Concurrent offline submission from two terminals,SlotID_Conflict_Handler
+REC00867,REC00985,Type5,Concurrent offline submission from two terminals,SlotID_Conflict_Handler
+REC00577,REC00986,Type5,Concurrent offline submission from two terminals,SlotID_Conflict_Handler
+REC00694,REC00987,Type5,Concurrent offline submission from two terminals,SlotID_Conflict_Handler
+REC00858,REC00988,Type5,Concurrent offline submission from two terminals,SlotID_Conflict_Handler
+REC00609,REC00989,Type5,Concurrent offline submission from two terminals,SlotID_Conflict_Handler
+REC00217,REC00990,Type5,Concurrent offline submission from two terminals,SlotID_Conflict_Handler

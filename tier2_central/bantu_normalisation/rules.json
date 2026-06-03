@@ -1,0 +1,83 @@
+{
+  "_comment": "Zambian Bantu Phonetic Normalisation Rules — Nathan Sachitembe 2022090446",
+  "_languages_covered": ["Bemba", "Nyanja", "Tonga", "Lozi", "Luvale", "Kaonde", "Lunda"],
+
+  "apostrophe_tonal_markers": {
+    "_description": "Apostrophes in Bantu names mark tonal or click sounds. They are frequently omitted by data entry clerks.",
+    "Ng'": "Ng",
+    "Nk'": "Nk",
+    "Ng'a": "Nga",
+    "Ng'u": "Ngu",
+    "Ng'o": "Ngo",
+    "Ng'e": "Nge",
+    "Ng'i": "Ngi",
+    "Nk'a": "Nka",
+    "Ch'": "Ch",
+    "Sh'": "Sh",
+    "Nh'": "Nh"
+  },
+
+  "bantu_prefix_normalisation": {
+    "_description": "Bantu name prefixes are often added or dropped inconsistently across district registration offices. Normalise by stripping prefix to root form.",
+    "prefixes_to_strip": ["Wa", "Ka", "Chi", "Mu", "Ba", "Ma", "Bu", "Lu", "Tu", "Ku", "Pa", "Ha"],
+    "_examples": [
+      "Mwale vs Wale — Mu+wale vs root",
+      "Kalumba vs Lumba — Ka+lumba vs root",
+      "Chanda vs Anda — prefix variation",
+      "Banda vs Bwanda — prefix elision"
+    ]
+  },
+
+  "consonant_equivalences": {
+    "_description": "Dialect-driven consonant substitutions across Bemba, Nyanja, Tonga, Luvale. Map all variants to canonical form.",
+    "Mv": "Mw",
+    "Bv": "Bw",
+    "Fv": "Fw",
+    "Pv": "Pw",
+    "Nv": "Nw",
+    "Nh": "Ng",
+    "Nj": "Ng",
+    "Ndj": "Nj",
+    "Tch": "Ch",
+    "Ts": "Ch",
+    "Dz": "Z",
+    "Nd": "N",
+    "_examples": [
+      "Mwamba vs Mvamba — Bemba/Tonga variant",
+      "Bwalya vs Bvalya — Bemba consonant shift",
+      "Njovu vs Ngovu — Nyanja/Tonga",
+      "Chanda vs Tsanda — dialectal"
+    ]
+  },
+
+  "vowel_normalisation": {
+    "_description": "Long vowels written as double are often reduced to single in rushed data entry.",
+    "aa": "a",
+    "ee": "e",
+    "oo": "o",
+    "uu": "u",
+    "ii": "i",
+    "_examples": [
+      "Maalik vs Malik",
+      "Moono vs Mono — Tonga name"
+    ]
+  },
+
+  "common_spelling_variants": {
+    "_description": "High-frequency Zambian name spelling divergences documented from NRC registration error patterns.",
+    "ph": "f",
+    "ck": "k",
+    "gh": "g",
+    "cks": "ks",
+    "ks": "ks",
+    "_examples": [
+      "Phiri vs Firi — common Nyanja surname",
+      "Mwanick vs Mwanik"
+    ]
+  },
+
+  "name_inversion_pairs": {
+    "_description": "First and last name transposition is common when clerks record in different order.",
+    "_note": "This is handled at the record level in demographic_scorer.py, not here. Listed for documentation."
+  }
+}

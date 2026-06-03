@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://claude.ai/chat/037deec8-f641-40d7-8ed0-0ec844a96e4c
+HostUrl=https://claude.ai/api/organizations/d802b5e4-ed64-48fc-bd43-a15a5aff24c4/conversations/037deec8-f641-40d7-8ed0-0ec844a96e4c/wiggle/download-file?path=%2Fmnt%2Fuser-data%2Foutputs%2Ftier2_central%2Fbantu_normalisation%2Ftest_normaliser.py
