@@ -7,8 +7,8 @@
 ---
 
 ## PoC 1 — FAISS Biometric Recall (Kill Risk)
-**Notebook:** `poc/faiss_poc.ipynb`  
-**Date run:** __________________  
+**Notebook:** `poc/faiss_poc.ipynb`
+**Date run:** __________________
 **Week:** 3, Day 1
 
 ### Experiment Setup
@@ -16,69 +16,79 @@
 | Parameter | Value |
 |-----------|-------|
 | FaceNet model | InceptionResnetV1 pretrained='vggface2' |
-| Embedding dimensions | 128 |
+| Embedding dimensions | 512 |
 | Test pairs — same person | 10 |
 | Test pairs — different person | 10 |
-| Face image source | __________________ |
+| Face image source | Procedurally generated synthetic images (160x160 RGB) |
 | FAISS index type | IndexFlatIP (inner product on L2-normalised vectors) |
 
 ### Results
 
 **Same-person pairs:**
 
-| Pair | Image 1 | Image 2 | Cosine Similarity | Pass (≥ 0.80)? |
-|------|---------|---------|-------------------|----------------|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
-| 5 | | | | |
-| 6 | | | | |
-| 7 | | | | |
-| 8 | | | | |
-| 9 | | | | |
-| 10 | | | | |
-| **Average** | | | **__________** | |
+| Pair | Person Seed | Variation | Cosine Similarity | Pass (≥ 0.80)? |
+|------|-------------|-----------|-------------------|----------------|
+| 1 | 328 | 1 | 0.5557 | ✗ |
+| 2 | 58 | 2 | 0.8815 | ✓ |
+| 3 | 13 | 3 | 0.7827 | ✗ |
+| 4 | 380 | 4 | 0.7167 | ✗ |
+| 5 | 141 | 5 | 0.7473 | ✗ |
+| 6 | 126 | 6 | 0.7368 | ✗ |
+| 7 | 115 | 7 | 0.9082 | ✓ |
+| 8 | 72 | 8 | 0.6484 | ✗ |
+| 9 | 378 | 9 | 0.7110 | ✗ |
+| 10 | 53 | 10 | 0.9200 | ✓ |
+| **Average** | | | **0.7608** | **FAIL** |
 
 **Different-person pairs:**
 
-| Pair | Image 1 | Image 2 | Cosine Similarity | Pass (≤ 0.40)? |
-|------|---------|---------|-------------------|----------------|
-| 1 | | | | |
-| 2 | | | | |
-| 3 | | | | |
-| 4 | | | | |
-| 5 | | | | |
-| 6 | | | | |
-| 7 | | | | |
-| 8 | | | | |
-| 9 | | | | |
-| 10 | | | | |
-| **Average** | | | **__________** | |
+| Pair | Seed A | Seed B | Cosine Similarity | Pass (≤ 0.40)? |
+|------|--------|--------|-------------------|----------------|
+| 1 | 674 | 806 | 0.7993 | ✗ |
+| 2 | 690 | 810 | 0.8250 | ✗ |
+| 3 | 729 | 880 | 0.6920 | ✗ |
+| 4 | 640 | 905 | 0.7496 | ✗ |
+| 5 | 523 | 757 | 0.7131 | ✗ |
+| 6 | 652 | 894 | 0.8914 | ✗ |
+| 7 | 609 | 801 | 0.8042 | ✗ |
+| 8 | 509 | 934 | 0.8676 | ✗ |
+| 9 | 508 | 917 | 0.8437 | ✗ |
+| 10 | 524 | 930 | 0.6202 | ✗ |
+| **Average** | | | **0.7806** | **FAIL** |
 
 ### Verdict
 
 | Criterion | Target | Actual | Pass/Fail |
 |-----------|--------|--------|-----------|
-| Same-person cosine average | ≥ 0.80 | __________ | |
-| Different-person cosine average | ≤ 0.40 | __________ | |
-| Separation gap | ≥ 0.40 | __________ | |
+| Same-person cosine average | ≥ 0.80 | 0.7608 | ✗ FAIL |
+| Different-person cosine average | ≤ 0.40 | 0.7806 | ✗ FAIL |
+| Separation gap | ≥ 0.40 | -0.0198 | ✗ FAIL |
+| FAISS recall @ top-3 | ≥ 0.90 | 0.20 | ✗ FAIL |
 
-**Overall PoC 1 Result:** [ ] PASS — RISK 01 CLOSED &nbsp;&nbsp;&nbsp; [ ] FAIL — Fallback activated
+**Overall PoC 1 Result:** [x] FAIL — Fallback activated
 
 **If FAIL — Action taken:**
 ```
-____________________________________________________________
-____________________________________________________________
+Procedurally generated synthetic images (geometric shapes) do not contain
+sufficient facial geometry for FaceNet to produce separable embeddings.
+Same-person and different-person cosine similarities were indistinguishable
+(0.7608 vs 0.7806, gap = -0.02). Fallback activated per Elaboration
+Iteration Plan Section 3.2: switching to Labeled Faces in the Wild (LFW)
+dataset which provides real photographic face images. Architecture is
+unchanged — only the image source changes. Kill risk remains open pending
+rerun with LFW data.
 ```
 
-**Risk Register Update:** RISK 01 status changed to [ ] ✅ CLOSED / [ ] ⚠️ FALLBACK ACTIVATED
+**Risk Register Update:** RISK 01 status changed to [x] ⚠️ FALLBACK ACTIVATED
+
+**Date:** 2026-06-05
+**Rerun scheduled:** Immediately — faiss_poc_v2.ipynb with LFW embeddings
 
 ---
 
 ## PoC 2 — LSH Demographic Blocking Recall
-**Notebook:** `poc/lsh_poc.ipynb`  
-**Date run:** __________________  
+**Notebook:** `poc/lsh_poc.ipynb`
+**Date run:** __________________
 **Week:** 3, Day 2–3
 
 ### Experiment Setup
@@ -120,8 +130,8 @@ ____________________________________________________________
 ---
 
 ## PoC 3 — Bantu Normalisation Effectiveness
-**Notebook:** `poc/bantu_poc.ipynb`  
-**Date run:** __________________  
+**Notebook:** `poc/bantu_poc.ipynb`
+**Date run:** __________________
 **Week:** 4
 
 ### Acceptance Criterion
@@ -158,7 +168,7 @@ ____________________________________________________________
 ---
 
 ## PoC 4 — Environment Setup Verification
-**Date:** __________________  
+**Date:** __________________
 **Week:** 3
 
 ### Checklist
@@ -200,7 +210,7 @@ All items below must be confirmed before Construction begins:
 
 | Gate | Criterion | Status |
 |------|-----------|--------|
-| G1 | FAISS PoC passed — same-person cosine avg ≥ 0.80 | [ ] PASS / [ ] FALLBACK |
+| G1 | FAISS PoC — fallback activated, rerun with LFW pending | ⚠️ FALLBACK |
 | G2 | LSH PoC passed — blocking recall ≥ 95% on variant sample | [ ] PASS / [ ] FALLBACK |
 | G3 | Bantu PoC passed — Ng'andu/Ngandu score rises to ≥ 0.95 | [ ] PASS / [ ] FALLBACK |
 | G4 | Environment fully set up including pgvector | [ ] DONE |
