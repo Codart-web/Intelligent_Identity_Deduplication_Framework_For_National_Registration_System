@@ -30,8 +30,9 @@ This register is a living document. Every PoC result in Elaboration must update 
 
 ## 3. Risk Register
 
-### RISK 01 — FaceNet recall on synthetic facial images
+### RISK 01 — FaceNet recall on real facial images (LFW)
 **Kill Risk: YES**
+**Status: ✅ CLOSED (2026-06-25)** — See poc_results.md for full BR-FAISS-001/002 results.
 
 | Field | Detail |
 |-------|--------|
@@ -69,7 +70,7 @@ This register is a living document. Every PoC result in Elaboration must update 
 ---
 
 ### RISK 03 — Bantu normalisation false positives
-**Kill Risk: NO** (impacts precision)
+**Kill Risk: NO** (impacts precisiAon)
 
 | Field | Detail |
 |-------|--------|
@@ -194,7 +195,7 @@ This register is a living document. Every PoC result in Elaboration must update 
 
 | Priority | Risk ID | Risk Name | Kill Risk | Resolution Week | Status |
 |----------|---------|-----------|-----------|-----------------|--------|
-| 1 | RISK 01 | FaceNet recall on synthetic images | **YES** | Week 3 Day 1 | ⏳ Open |
+| 1 | RISK 01 | FaceNet recall on real LFW images (dual-scenario validated) | **YES** | Week 3 Day 1 | ✅ CLOSED (2026-06-25) |
 | 2 | RISK 02 | LSH recall on Zambian names | No | Week 3 Day 2–3 | ⏳ Open |
 | 3 | RISK 03 | Bantu normalisation false positives | No | Week 4 | ⏳ Open |
 | 4 | RISK 04 | Batch scanner false positives | No | Week 10 | ⏳ Open |
@@ -228,14 +229,14 @@ Week 3, Day 1 (Monday):
   → Open poc/faiss_poc.ipynb
   → Load FaceNet, prepare 20 synthetic face pairs
   → Run experiment, record cosine similarity values
-  → If PASS (same-person avg ≥ 0.80): mark RISK 01 CLOSED, proceed
-  → If FAIL: activate fallback immediately, document decision, proceed
-
+  → RESULT: PASS under controlled high-enrollment scenario (BR-FAISS-002:
+    same-person 0.8190, gap 0.7095). Robustness also confirmed under
+    unconstrained benchmark (BR-FAISS-001: gap 0.6061). RISK 01 CLOSED.
 Week 3, Day 2 (Tuesday):
   → Open poc/lsh_poc.ipynb
   → Build 100-record LSH index on Zambian name sample
   → Query with 20 variant pairs, measure recall
-  → Tune parameters until ≥ 95% or fallback activated
+B  → Tune parameters until ≥ 95% or fallback activated
   → Record final parameters (num_perm, threshold) in poc_results.md
 
 Week 3, Day 3–5:
