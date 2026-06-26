@@ -8,3 +8,13 @@ dist/
 .DS_Store
 *:Zone.Identifier
 .ipynb_checkpoints/
+poc/lfw/
+poc/*.zip
+poc/lfw-deepfunneled/
+poc/lfw_embeddings.pkl
+poc/matchpairs*.csv
+poc/mismatchpairs*.csv
+poc/people*.csv
+poc/pairs.csv
+poc/lfw_allnames.csv
+poc/lfw_readme.csv
